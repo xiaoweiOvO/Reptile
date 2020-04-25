@@ -1,0 +1,11 @@
+.ref{
+	/* border: 1px solid gainsboro; */
+	width: 250px;
+	height: 250px;
+}
+.ref-t{
+	width: 200px;
+	height: 45px;
+	line-height: 45px;
+	text-align: center;
+}

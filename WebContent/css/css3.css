@@ -1,0 +1,20 @@
+#play-button-b{
+	 height: 50px;
+	 width: 50px;
+	 border: 2px solid lightslategray;
+	 border-radius: 25px;
+	 line-height: 50px;
+	 text-align: center;
+}
+#play-button-a{
+	 height: 60px;
+	 width: 60px;
+	 border: 2px solid lightslategray;
+	 border-radius: 30px;
+	 line-height: 60px;
+	 text-align: center;
+}
+#play-div{
+	width: 550px;
+	text-align: center;
+}

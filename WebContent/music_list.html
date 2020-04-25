@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <link rel="icon" href="https://v3.bootcss.com/favicon.ico">
+  
+      <title>list</title>
+  	  <script src="js/getParameter.js"></script>
+      <link href="./Bootstrap_files/bootstrap.min.css" rel="stylesheet">
+      <link href="./Bootstrap_files/bootstrap-theme.min.css" rel="stylesheet">
+      <link href="./Bootstrap_files/ie10-viewport-bug-workaround.css" rel="stylesheet">
+      <link href="./Bootstrap_files/theme.css" rel="stylesheet">
+      <script src="./Bootstrap_files/ie-emulation-modes-warning.js.下载"></script>
+        <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    </head>
+  <body>
+		<div class="container theme-showcase" role="main">
+			<!-- 导航条 -->
+			<nav class="navbar navbar-default">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="#">Project name</a>
+					</div>
+					<div class="navbar-collapse collapse">
+						<ul class="nav navbar-nav">
+							<li><a href="index.html">首页</a></li>
+							<li class="active"><a href="music_list.html">榜单</a></li>
+							<li><a href="#contact">歌单</a></li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">更多 <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li><a href="#">电台</a></li>
+									<li><a href="#">MV</a></li>
+									<li><a href="#">歌手</a></li>
+									<!-- <li role="separator" class="divider"></li>
+									<li class="dropdown-header">Nav header</li>
+									<li><a href="#">Separated link</a></li>
+									<li><a href="#">One more separated link</a></li> -->
+								</ul>
+							</li>
+						</ul>
+					</div><!--/.nav-collapse -->
+				</div>
+			</nav>
+			<div class="page-header">
+			  <h1>排行榜</h1>
+			</div>
+			<div class="col-md-3" style="border: 1px solid gainsboro;">
+			  <table class="table">
+			    <thead>
+			      <tr>
+			        <th>排行榜名称</th>
+			      </tr>
+			    </thead>
+			    <tbody id="rankList">
+						
+			    </tbody>
+			  </table>
+			</div>
+			<div class="col-md-9">
+				<table class="table table-striped">
+				  <thead>
+				    <tr>
+				      <th>排名</th>
+				      <th>歌曲</th>
+				      <th>歌手</th>
+				      <th>时长</th>
+				    </tr>
+				  </thead>
+				  <tbody id="musicList">
+				    
+				  </tbody>
+				</table>
+			</div>
+		</div>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+		<script src="./Bootstrap_files/jquery.min.js.下载"></script>
+		<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+		<script src="./Bootstrap_files/bootstrap.min.js.下载"></script>
+		<script src="./Bootstrap_files/docs.min.js.下载"></script>
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+		<script src="./Bootstrap_files/ie10-viewport-bug-workaround.js.下载"></script>
+		
+	<svg xmlns="http://www.w3.org/2000/svg" width="1140" height="500" viewBox="0 0 1140 500" preserveAspectRatio="none" style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;"><defs><style type="text/css"></style></defs><text x="0" y="57" style="font-weight:bold;font-size:57pt;font-family:Arial, Helvetica, Open Sans, sans-serif">Thirdslide</text></svg>
+	</body>
+	<script type="text/javascript">
+		$(function(){
+
+			//排行榜名字侧栏部分
+			$.get("QueryListname",function(result){
+				//定义一个页面内容
+				var listHtml = "";
+				//写页面内容
+				$(result).each(function(index,element){
+					listHtml+="<tr><td><a href='music_list.html?listname="+element+"'><font size='3'>"+element+"</font></a></td></tr>";
+				})
+				//添加到页面
+				$("#rankList").html(listHtml);
+			},"json")
+			
+			
+			//歌曲列表部分
+			//获取listname
+			var listname = getParameter("listname");
+			//解码，不解码是其他字符串
+			listname = decodeURI(listname);
+			//将id为listname的元素替换为html括号内的值
+			$("#listName").html(listname);
+			
+			$.get("QueryList",{listname:listname},function(result){
+				var musicHtml="";
+				//遍历之后得到musicHtml
+				$(result).each(function(index,element){
+					var rid = element.rid;
+					var ranking = element.ranking;
+					var sname = element.sname;
+					var singer = element.singer;
+					var duration = element.duration;
+					musicHtml += "<tr><td>"+ranking+"</td><td><a href='music_detail.html?id="+rid+"-"+ranking+"'>"+sname+"</a></td><td>"+singer+"</td><td>"+duration+"</td></tr>";
+					//console.log(ranking+sname+singer+duration)
+				})
+				$("#musicList").html(musicHtml);
+				
+			},"json")
+			
+			
+		})
+		
+		
+		
+	
+	</script>
+ </html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <link rel="icon" href="https://v3.bootcss.com/favicon.ico">
+  
+      <title>music</title>
+      <script src="js/getParameter.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/css3.css"/>
+		<link rel="stylesheet" type="text/css" href="asserts/font-awesome-4.7.0/css/font-awesome.min.css"/>
+      <link href="./Bootstrap_files/bootstrap.min.css" rel="stylesheet">
+      <link href="./Bootstrap_files/bootstrap-theme.min.css" rel="stylesheet">
+      <link href="./Bootstrap_files/ie10-viewport-bug-workaround.css" rel="stylesheet">
+      <link href="./Bootstrap_files/theme.css" rel="stylesheet">
+      <script src="./Bootstrap_files/ie-emulation-modes-warning.js.下载"></script>
+    </head>
+  <body>
+		<div class="container theme-showcase" role="main">
+			<nav class="navbar navbar-default">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="#">Project name</a>
+					</div>
+					<div class="navbar-collapse collapse">
+						<ul class="nav navbar-nav">
+							<li><a href="index.html">首页</a></li>
+							<li><a href="music_list.html">榜单</a></li>
+							<li><a href="#contact">歌单</a></li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">更多 <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li><a href="#">电台</a></li>
+									<li><a href="#">MV</a></li>
+									<li><a href="#">歌手</a></li>
+									<!-- <li role="separator" class="divider"></li>
+									<li class="dropdown-header">Nav header</li>
+									<li><a href="#">Separated link</a></li>
+									<li><a href="#">One more separated link</a></li> -->
+								</ul>
+							</li>
+						</ul>
+					</div><!--/.nav-collapse -->
+				</div>
+			</nav>
+			<div class="col-md-12">
+				<div id="albumImg" class="col-md-6" style="height: 450px;width: 550px;padding: 50px 100px;">
+					<img src="img/logo05.jpg" >
+					
+				</div>
+				<div class="col-md-6" style="height: 450px;">
+					<div style="height: 50px;width: 525px;">
+						<div class="page-header">
+						  <h3 id="song-name"><a>歌名</a></h3>
+						</div>
+					</div>
+					<div style="height: 40px;width: 525px;">
+						<div style="float: left;width: 260px;">
+							<h4>专辑：<a id="album-name">专辑名称</a></h4>
+						</div>
+						<div style="float: left;width: 260px;">
+							<h4>歌手：<a id="singer-name">歌手名字</a></h4>
+						</div>
+					</div>
+					<div style="width: 500px;height: 300px;text-align: center;">
+						<h4>
+							歌词找不到
+						</h4>
+					</div>
+					
+				</div>
+				<div class="col-md-6" id="play-div">
+					<span class="fa fa-step-backward" id="play-button-b"></span>
+					<span class="fa fa-play" id="play-button-a"></span>
+					<span class="fa fa-step-forward" id="play-button-b"></span>
+				</div>
+				<div class="col-md-6" style="height: 60px;">
+					<div style="height: 30px;">
+						<div style="width: 250px;float: left;">
+						  <h7 id="song-name2">歌名</h7>
+						</div>
+						<div style="text-align: right;width: 250px;float: left;">
+							<h7>1:32 /</h7>
+						  <h7 id="duration">时长</h7>
+						</div>
+					</div>
+					<div style="height: 30px;">
+						<div class="progress" style="height: 10px;">
+						  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 40%"><span class="sr-only">20% Complete</span></div>
+						</div>	
+					</div>	
+				</div>
+			</div>
+			<div class="col-md-12" style="height: 20px;">
+			</div>
+			<div class="col-md-12" style="height: 4px;background-color: #40AFFE;border-radius: 2px;">
+			</div>
+		</div>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+		<script src="./Bootstrap_files/jquery.min.js.下载"></script>
+		<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+		<script src="./Bootstrap_files/bootstrap.min.js.下载"></script>
+		<script src="./Bootstrap_files/docs.min.js.下载"></script>
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+		<script src="./Bootstrap_files/ie10-viewport-bug-workaround.js.下载"></script>
+		
+	<svg xmlns="http://www.w3.org/2000/svg" width="1140" height="500" viewBox="0 0 1140 500" preserveAspectRatio="none" style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;"><defs><style type="text/css"></style></defs><text x="0" y="57" style="font-weight:bold;font-size:57pt;font-family:Arial, Helvetica, Open Sans, sans-serif">Thirdslide</text></svg>
+	</body>
+	<script>
+		$(function(){
+			var id = getParameter("id");
+			//var Id = id.split('-');
+			//var rid = Id[0];
+			//var ranking = Id[1];
+			//console.log(rid+"--"+ranking);
+			$.get("QueryMusicById",{id:id},function(result){
+				//console.log(result);
+				var sname = result.sname;
+				var album = result.album;
+				var singer = result.singer;
+				var duration = result.duration;
+				var href = result.href;
+				var pic =result.pic;
+				var snameHtml = "";
+				var picHtml = "";
+				snameHtml+="<a href='"+href+"'>"+sname+"</a>";
+				picHtml+="<img src='"+pic+"' style='width: 100%;height: 100%;'>";
+				//console.log(sname+album+singer);
+				$("#song-name").html(snameHtml);
+				$("#album-name").html("专辑:"+album);
+				$("#singer-name").html("歌手:"+singer);
+				$("#duration").html(duration);
+				$("#song-name2").html(sname);
+				$("#albumImg").html(picHtml);
+			})
+			
+		})
+	
+	
+	</script>
+ </html>
